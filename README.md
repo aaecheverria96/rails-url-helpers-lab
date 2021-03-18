@@ -14,7 +14,7 @@
 
 In this lab you will be building out the Student management dashboard for the Flatiron School by starting to integrate the ability to link between pages. Two tests are currently passing, and the rest need implementation code to start passing. In order to complete this lab, you will need to complete the following tasks:
 
-- A user should be able to navigate to `/students` to view all of the students.
+- A user should be able to navigate to `/students` to view all of the students.  
 
 - A user should be able to click the student's name on the `index` page and be taken to that specific student's `show` page.
 

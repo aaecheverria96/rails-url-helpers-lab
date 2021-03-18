@@ -1,16 +1,26 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: :show
+  before_action :set_student, only: :show 
   
   def index
-    @students = Student.all
+    @students = Student.all 
+    
   end
 
-  def show
-  end
+  def to_s 
+    "#{self.first_name self.last_name}" 
+  end    
+
+  def activate 
+    @student = Student.find_by(id: params[:id])
+    @student.active = !@student.active 
+  end 
+
+
 
   private
 
     def set_student
-      @student = Student.find(params[:id])
+      @student = Student.find_by(id: params[:id])  
+      
     end
 end
