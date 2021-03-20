@@ -4,16 +4,13 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all 
     
-  end
-
-  def to_s 
-    "#{self.first_name self.last_name}" 
-  end    
+  end   
 
   def activate 
-    @student = Student.find_by(id: params[:id])
+    @student = Student.find_by_id(params[:id]) 
     @student.active = !@student.active 
-    redirect "/students/#{@student.id}"
+    @student.save 
+    redirect student_path(@student)
   end 
 
 
@@ -21,7 +18,7 @@ class StudentsController < ApplicationController
   private
 
     def set_student
-      @student = Student.find_by(id: params[:id])  
+      @student = Student.find_by_id(params[:id])  
       
     end
 end

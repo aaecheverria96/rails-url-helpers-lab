@@ -1,4 +1,5 @@
 class SwitchDefault < ActiveRecord::Migration[5.0]
-  def change
+  def change 
+    
   end
 end
